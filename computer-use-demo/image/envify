@@ -1,0 +1,3 @@
+#!/bin/bash
+
+perl -p -e 's/\$\{\{([\w\d]+)(:.*)?\}\}/(exists $ENV{$1} ? $ENV{$1} : (substr $2, 1))/eg' < $1
